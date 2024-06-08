@@ -4,7 +4,7 @@ import Wrapper from "@/components/Navbar/Wrapper";
 import PageWrapper from "@/components/Navbar/Wrapperpage";
 import HeaderMobile from "@/components/Navbar/mobile-header";
 import Sidebar from "@/components/Navbar/sidebar";
-import SectionWrapper from "@/components/SectionWrapper";
+
 import Welcome from "@/components/Welcome";
 import { ReactNode } from "react";
 
