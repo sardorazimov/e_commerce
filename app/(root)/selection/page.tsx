@@ -22,7 +22,7 @@ const Page = () => {
   const router = useRouter()
   return (
     <div className="bg-slate-100 w-full h-full ">
-      <MenuNavbar />
+     
       <div className="grid grid-cols-3 p-4 md:p-10 sm:p-10 md:grid-cols-6 gap-8  h-[100px]"> 
         <Button onClick={() => router.push('/macbook')}
          className="bg-white hover:text-white text-black shadow shadow-slate-300 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3">Macbbok</Button>

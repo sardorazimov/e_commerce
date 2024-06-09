@@ -1,83 +1,119 @@
+'use client'
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable jsx-a11y/alt-text */
 // eslint-disable-next-line @next/next/no-img-element
 // eslint-disable-next-line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes
 
-
 import Link from "next/link"
+import React from "react"
+import { useRouter } from "next/navigation"
+import { Separator } from "./ui/separator"
+import Image from "next/image"
+import { Button } from "./ui/button"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card"
 
-const Welcome = () => {
-    return (
-        <div>
-            <main className="dark:bg-gray-800 bg-white relative overflow-hidden h-screen">
-                <header className="h-32 sm:h-32 flex items-center z-30 w-full">
-                    <div className="container mx-auto px-6 flex items-center justify-between">
-                        <div className="uppercase text-gray-800 dark:text-white font-black text-3xl">
-                           <Link href={'/'}>E  <span className="text-green-600">Commerce</span></Link>
-                        </div>
-                        <div className="flex items-center">
-                            <nav className="font-semibold text-gray-800 dark:text-white uppercase text-lg lg:flex items-center hidden">
-                                <Link href={'/'} className="py-2 px-6 flex">
-                                    Home
-                                </Link>
-                                <Link href={'/'} className="py-2 px-6 flex">
-                                    Watch
-                                </Link>
-                                <Link href={'/phone'} className="py-2 px-6 flex">
-                                    Product
-                                </Link>
-                                <Link href={'/'} className="py-2 px-6 flex">
-                                    Contact
-                                </Link>
-                                <Link href={'/'} className="py-2 px-6 flex">
-                                    Carrer
-                                </Link>
-                            </nav>
-                            <button className="lg:hidden flex flex-col ml-4">
-                                <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                                </span>
-                                <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                                </span>
-                                <span className="w-6 h-1 bg-gray-800 dark:bg-white mb-1">
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </header>
-                <div className="bg-white dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
-                    <div className="container mx-auto px-6 flex relative py-16">
-                        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
-                            <span className="w-20 h-2 bg-gray-800 dark:bg-white mb-12">
-                            </span>
-                            <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800">
-                                Be on
-                                <span className="text-5xl sm:text-7xl">
-                                    Time
-                                </span>
-                            </h1>
-                            <p className="text-sm sm:text-base text-gray-700 dark:text-white">
-                                Dimension of reality that makes change possible and understandable. An indefinite and homogeneous environment in which natural events and human existence take place.
-                            </p>
-                            <div className="flex mt-8">
-                                <Link href={'/selection'} className="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-md mr-4 hover:bg-pink-400">
-                                    Get started
-                                </Link>
-                                <Link href={'/docs'} className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-pink-500 text-pink-500 dark:text-white hover:bg-pink-500 hover:text-white text-md">
-                                    Read more
-                                </Link>
-                            </div>
-                        </div>
-            
-                        <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
 
-                            <img src="https://www.tailwind-kit.com/images/object/10.png" className="max-w-xs md:object-contain m-auto" />
-                        </div>
-                    </div>
-                </div>
-            </main>
+interface WelcomeProps {
+  title: string,
+  name: string,
+  description: string,
+  onOpenChange?(open: boolean): void
+
+}
+
+const Welcome = ({
+  title,
+  name,
+  description,
+}: WelcomeProps) => {
+  const router = useRouter()
+
+
+  return (
+    <div className="p-[45px] max-w-full">
+      <div className="ml-[700px] absolute w-[760px] h-[600px]  p-[90px]">
+        <img src="/aplle/hero-1.png" alt="Welcome" className="object-contain sm:object-contain md:object-contain" />
+      </div>
+      <div className="ml-[60px] p-[20px]">
+        <h1 className="font-extrabold text-3xl p-[40px]">
+          {name}
+
+        </h1>
+        <p className="text-1xl w-[450px] h-[] transition-colors cursor-pointer">
+          {description}
+        </p>
+        {/** */}
+        <div className="gap-7 flex p-[100px]">
+          <Button onClick={() => router.push('/selection')}
+          >Get Srarted</Button>
+          <div>
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Button>Open Docs</Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className="">
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This action cannot be undone. This will permanently delete your account
+                    and remove your data from our servers.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={() => router.push('/docs')}>Continue</AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
+
         </div>
-    )
+
+        <div className=" grid grid-cols-3">
+          <div>
+             <HoverCard>
+            <HoverCardTrigger>Testiomials</HoverCardTrigger>
+            <Separator />
+            <HoverCardContent>
+             {description}
+            </HoverCardContent>
+          </HoverCard>
+          </div>
+          <div>
+             <HoverCard>
+            <HoverCardTrigger>Testiomials</HoverCardTrigger>
+            <Separator />
+            <HoverCardContent>
+             {description}
+            </HoverCardContent>
+          </HoverCard>
+          </div>
+          <div>
+             <HoverCard>
+            <HoverCardTrigger>Testiomials</HoverCardTrigger>
+            <Separator />
+            <HoverCardContent>
+             {description}
+            </HoverCardContent>
+          </HoverCard>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  )
 }
 
 export default Welcome

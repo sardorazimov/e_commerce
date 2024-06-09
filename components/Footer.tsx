@@ -2,15 +2,16 @@
 import React from 'react'
 import { Input } from './ui/input'
 
+
 const Footer = () => {
     return (
         <div>
 
-            <footer className="bg-gray-800 text-white">
-                <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <footer className="bg-gray-800 text-white sm:w-full md:w-full">
+                <div className="mx-auto max-w-screen-xl sm:w-full  px-4 py-16 sm:px-6 lg:px-8">
                     <div className="lg:flex lg:items-start lg:gap-8">
                         <div className="text-teal-600">
-                        <img src="/Logo1.png" alt="Logo" className='w-[250px] h-[250px] object-contain md:object-contain sm:object-contain' />
+                        <img src="/logo.svg" alt="Logo" className='w-[250px] h-[250px] object-contain md:object-contain sm:object-contain' />
                         </div>
 
                         <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
