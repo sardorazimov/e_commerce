@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://youtu.be/B91wc5dCEBA" target="_blank">
-      <img src="https://i.ibb.co/Kqdv8j1/Image-from.png" alt="Project Banner">
+      <img src="https://as1.ftcdn.net/v2/jpg/03/08/36/16/1000_F_308361666_d7KABD3fZ5fyelmTZ1c0GRfNn6nfhZTA.jpg" alt="Project Banner">
     </a>
   <br />
 
@@ -14,7 +14,7 @@
   <h3 align="center">Modern UI/UX website</h3>
 
    <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://instagram.com//azimov_s.a" target="_blank"><b>JavaScript Mastery</b></a> YouTube.
+     Build this project step by step with our detailed tutorial on <a href="https://instagram.com//azimov_s.a" target="_blank"><b>Azimov</b></a> YouTube.
     </div>
 </div>
 
