@@ -1,27 +1,3 @@
-<div align="center">
-  <br />
-    <a href="https://t.me/azsams" target="_blank">
-      <img src="/public/e.png" alt="Project Banner">
-    </a>
-  <br />
-      
-  <div>
-    
-   
- <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss"/> 
-  </div>
-
-  <h3 align="center">E-Commerce</h3>
-
-   <div align="center">
-     Build this project step by step with our detailed tutorial on <a href="https://instagram.com//azimov_s.a" target="_blank"><b>Azimov</b></a> YouTube.
-    </div>
-</div>
-
-
-
-
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
