@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import MenuNavbar from "@/components/MenuNavbar";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/providers/Themes";
+import Sidebar from "@/components/Navbar/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
             enableColorScheme
+            
           >
             <Header />
             {children}

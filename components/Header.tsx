@@ -1,117 +1,110 @@
-'use client'
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { useScrolled } from "@/hooks/Ts/Scrolled"
-import * as React from "react"
+"use client"
+import React from 'react'
+import { Separator } from './ui/separator'
+
+
+
+
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuPortal,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuSub,
-    DropdownMenuSubContent,
-    DropdownMenuSubTrigger,
-    DropdownMenuTrigger,
+
+
 } from "@/components/ui/dropdown-menu"
 import {
-    Cloud,
-    CreditCard,
-    Github,
-    Keyboard,
-    LifeBuoy,
-    LogOut,
-    Mail,
-    MessageSquare,
-    Plus,
-    PlusCircle,
-    Settings,
-    Heart,
-    Moon,
-    ShoppingBasket,
-    Sun,
-    User,
-    UserPlus,
-    Users,
-    Menu,
-} from "lucide-react"
-import { Separator } from "./ui/separator"
-import { cn } from "@/lib/utils"
-
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Menu, User } from 'lucide-react'
+import Link from 'next/link'
 
 
 const Header = () => {
-    const scrolled = useScrolled();
-    const { setTheme } = useTheme()
-    const router = useRouter()
-    return (
-        <div className={cn("   w-full h-[100px]  fixed"  , scrolled && "border-b shadow-sm")}>
-            <header className="grid grid-cols-3 sm:grid-cols-6 ml-[20px] ">
-                <div className="w-[70px] h-[300px] p-5 m-3">
-                    <img src="/download.svg" alt="" className=" object-contain w-10 " />
-                </div>
-                <nav className="grid grid-cols-4 gap-[182px]  p-6 dark:text-white">
-                    <Link href={'/'} onClick={() => router.push('/')} className="">About</Link>
-                    <Link href={'/'} onClick={() => router.push('/')}>About</Link>
-                    <Link href={'/'} onClick={() => router.push('/')}>About</Link>
-                    <Link href={'/'} onClick={() => router.push('/')} className="">About</Link>
-                </nav>
 
-                <nav className="grid grid-cols-3 p-6 ml-[450px] gap-[130px] justify-between">
-                    <ShoppingBasket className="cursor-pointer hover:animate-spin" onClick={() => router.push('/')} />
-                    <Heart className="cursor-pointer  hover:animate-pulse" onClick={() => router.push('/')} />
-                    <User className="cursor-pointer hover:animate-accordion-down " onClick={() => router.push('/')} />
-                </nav>
-                <div className="p-5 ml-[580px]">
-                    <DropdownMenu >
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon">
-                                <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                                <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                                <span className="sr-only">Toggle theme</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuItem onClick={() => setTheme("light")}>
-                                Light
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("dark")}>
-                                Dark
-                            </DropdownMenuItem>
-                            <DropdownMenuItem onClick={() => setTheme("system")}>
-                                System
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
-                <div  className="ml-[400px] p-6">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger>
-                            <Menu />
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                            <DropdownMenuLabel >E Commerce</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem>About</DropdownMenuItem>
-                            <DropdownMenuItem>Billing</DropdownMenuItem>
-                            <DropdownMenuItem>Team</DropdownMenuItem>
-                            <DropdownMenuItem>Subscription</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                </div>
+  const { setTheme } = useTheme()
 
-            </header>
-            
+  return (
+    <div>
+      <header className="fixed w-full bg-white dark:bg-slate-950 dark:border-separate dark:text-white">
+        <nav className="flex justify-between items-center w-[92%]  mx-auto">
+          <div>
+           <Link href={'/'} className='text-3xl md:text-xl font-mono'>Online Shop</Link>
+          </div>
+          <div
+            className="  duration-500 md:static absolute  md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+            <ul className="flex md:flex-row  flex-col md:items-center md:gap-[4vw] gap-8">
+              <li>
+                <a className="hover:text-gray-500 " href="#">Products</a>
+                <Separator />
+              </li>
+              <li>
+                <a className="hover:text-gray-500" href="#">Solution</a>
+                <Separator />
+              </li>
+              <li>
+                <a className="hover:text-gray-500" href="#">Resource</a>
+                <Separator />
+              </li>
+              <li>
+                <a className="hover:text-gray-500" href="#">Developers</a>
+                <Separator />
+              </li>
+              <li>
+                <a className="hover:text-gray-500" href="#">Pricing</a>
+                <Separator />
+              </li>
+            </ul>
+          </div>
+          <div className="flex items-center gap-6">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                  System
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <User />
+            <DropdownMenu >
+              <DropdownMenuTrigger className='xl:hidden'>
+                <Menu />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem>Team</DropdownMenuItem>
+                <DropdownMenuItem>Subscription</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
-        </div>
-    )
+          </div>
+        </nav>
+      </header>
+      <Separator className='bg-black dark:bg-white' />
+    </div>
+  )
 }
 
 export default Header
+
