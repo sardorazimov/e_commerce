@@ -32,76 +32,74 @@ const Header = () => {
 
   return (
     <div>
-      <header className="fixed w-full bg-white dark:bg-slate-950 dark:border-separate dark:text-white">
-        <nav className="flex justify-between items-center w-[92%]  mx-auto">
-          <div>
-           <Link href={'/'} className='text-3xl md:text-xl font-mono'>Online Shop</Link>
+      <nav className="bg-gray-950 border-gray-200 py-2.5 fixed w-full active:blur-sm ">
+        <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+          <Link href={'/'} className="flex items-center">
+            
+            <span className="self-center text-xl font-semibold text-white ">Online Shop</span>
+          </Link>
+          <div className="flex items-center lg:order-2">
+            <div className="hidden mt-2 mr-4 sm:inline-block">
+              <span></span>
+            </div>
+
+            <Button className="bg-white text-black font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0"
+            >Login</Button>
+            <button data-collapse-toggle="mobile-menu-2" type="button"
+              className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="mobile-menu-2" aria-expanded="true">
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Menu className=' rounded  text-white' />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>Shop</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Profile</DropdownMenuItem>
+                  <DropdownMenuItem>Billing</DropdownMenuItem>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuItem>Subscription</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </button>
           </div>
-          <div
-            className="  duration-500 md:static absolute  md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
-            <ul className="flex md:flex-row  flex-col md:items-center md:gap-[4vw] gap-8">
-              <li>
-                <a className="hover:text-gray-500 " href="#">Products</a>
-                <Separator />
+          <div className=" hidden items-center justify-between w-full lg:flex lg:w-auto lg:order-1" >
+            <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+              
+                {/**
+                 *  <li>    <a href="#"
+                  className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0">Home</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href="#">Solution</a>
-                <Separator />
+                <a href="#"
+                  className="block py-2 pl-3 pr-4
+                   text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0
+                    lg:hover:text-purple-700 lg:p-0 0">Company</a>
+              </li>
+                 */}
+           
+              <li>
+                <a href="#"
+                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Marketplace</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href="#">Resource</a>
-                <Separator />
+                <a href="#"
+                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Features</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href="#">Developers</a>
-                <Separator />
+                <a href="#"
+                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Team</a>
               </li>
               <li>
-                <a className="hover:text-gray-500" href="#">Pricing</a>
-                <Separator />
+                <a href="#"
+                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Contact</a>
               </li>
             </ul>
           </div>
-          <div className="flex items-center gap-6">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  Dark
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
-                  System
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <User />
-            <DropdownMenu >
-              <DropdownMenuTrigger className='xl:hidden'>
-                <Menu />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+        </div>
+      </nav>
 
-          </div>
-        </nav>
-      </header>
-      <Separator className='bg-black dark:bg-white' />
+
     </div>
   )
 }

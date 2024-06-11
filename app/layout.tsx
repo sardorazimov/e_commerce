@@ -4,10 +4,9 @@ import "./globals.css";
 
 import {  } from "@clerk/nextjs";
 import Footer from "@/components/Footer";
-import MenuNavbar from "@/components/MenuNavbar";
+
 import Header from "@/components/Header";
-import { ThemeProvider } from "@/components/providers/Themes";
-import Sidebar from "@/components/Navbar/sidebar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,24 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
-    <html lang="en">
-      
+    <html lang="en">   
         <body className={inter.className}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-            enableColorScheme
-            
-          >
             <Header />
-            {children}
-          </ThemeProvider>
+            {children}         
           <Footer />
-        </body>
-    
+        </body>   
     </html>
 
   );
