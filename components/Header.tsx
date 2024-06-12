@@ -73,26 +73,26 @@ const Header = () => {
               <li>
                 <a href="#"
                   className="block py-2 pl-3 pr-4
-                   text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0
+                   text-white border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0
                     lg:hover:text-purple-700 lg:p-0 0">Company</a>
               </li>
                  */}
            
               <li>
                 <a href="#"
-                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Marketplace</a>
+                  className="block py-2 pl-3 pr-4 text-white border-b border-gray-100">Marketplace</a>
               </li>
               <li>
                 <a href="#"
-                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Features</a>
+                  className="block py-2 pl-3 pr-4 text-white border-b border-gray-100">Features</a>
               </li>
               <li>
                 <a href="#"
-                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Team</a>
+                  className="block py-2 pl-3 pr-4 text-white border-b border-gray-100">Team</a>
               </li>
               <li>
                 <a href="#"
-                  className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100">Contact</a>
+                  className="block py-2 pl-3 pr-4 text-white border-b border-gray-100">Contact</a>
               </li>
             </ul>
           </div>

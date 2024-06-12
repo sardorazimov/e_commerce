@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card"
 import Section from "./Section"
-import { heroIcons } from "@/constants"
+import { heroIcons } from "@/constant"
 import { AlignRight, ArrowRightToLine, BookOpenCheck } from "lucide-react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog"
 import Hero from "./Hero"
@@ -75,7 +75,7 @@ const Welcome = ({
             </Button>
             <Button  onClick={() => router.push('/docs')}
             className="inline-flex items-center justify-center w-full px-6 py-3 mb-2 text-lg rounded-2xl bg-gray-950 text-white sm:w-auto sm:mb-0">
-              Docs
+              Docs More
               <BookOpenCheck className="ml-2" />
             </Button>
           </div>

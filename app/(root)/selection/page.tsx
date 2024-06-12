@@ -3,26 +3,312 @@
 /* eslint-disable @next/next/no-img-element */
 
 
-import MenuNavbar from "@/components/MenuNavbar"
+
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Plus } from "lucide-react"
+
 import { useRouter } from "next/navigation"
+import { Input } from "@/components/ui/input"
+import { Search, ShoppingBag, Star } from "lucide-react"
 
 
 
 const Page = () => {
-  const router = useRouter()
-  return (
-    <div className="w-full h-full p-[40px] ">
-     
+    const router = useRouter()
+    return (
+
+        <div className="p-[80px] w-full ">
+            <div className="mt-6 bg-transparent border rounded-lg  lg:w-2/3 focus-within:border-primary focus-within:ring focus-within:ring-primary dark:focus-within:border-primary focus-within:ring-opacity-20"><form action="/search" className="flex flex-wrap justify-between md:flex-row"><input type="search" name="query" placeholder="Search Product" className="flex-1 h-10 px-4 m-1 text-gray-700 placeholder-gray-400 bg-transparent border-none appearance-none lg:h-12 dark:text-gray-200 focus:outline-none focus:placeholder-transparent focus:ring-0" /> <button type="submit" className="flex items-center justify-center w-full p-2 m-1 text-white transition-colors duration-300 transform rounded-lg lg:w-12 lg:h-12 lg:p-0 bg-primary hover:bg-primary/70 focus:outline-none focus:bg-primary/70" ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button></form></div>
+            <div className="p-3 shadow-lg hover:transition hover:border-violet-800">
+                <div >
+                    <ul className="grid grid-cols-1 gap-8 p-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:p-2 xl:p-5">
+                        <li onClick={() => router.push('/macbook')}
+                        className="relative  border rounded-lg shadow-md cursor-pointer hover:shadow-lg hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star className="text-yellow-700 " />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                < >
+                                    <img className="rounded-md object-contain" src="/macbook/1.png" alt="Product" />
+                                </>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                               {/***
+                                *    <Button className="ml-3 p-5 text-xl font-semibold tracking-tight text-white hover:text-purple-800">
+                                        <ShoppingBag />
+                                    </Button>
+                                */}
+                                 
+
+                                </div>
+                            </div>
+                            {/**
+                             *       <span className="border text-center ml-2 text-gray-700 w-50px">
+                                999$
+                            </span>
+                            <p>
+                              Macbook Pro 2023  M2 16BG Ram 512 GB Ssd 
+                            </p>
+                             */}
+                      
+                          
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-lg hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2 ">
+                                < >
+                                    <img className="rounded-md  h-full" src="/iwatch/1.png" alt="Product" />
+                                </>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    < >
+                                        {}
+                                    </>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400 ">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                            <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2 object-cover">
+                                < >
+                                    <img className="rounded-md object-contain " src="/phone/apple15.png" alt="Product" />
+                                </>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight  ">
+                                        
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer 0 hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="/ipad/ipad.png" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a className="text-xl font-semibold tracking-tight text-gray-900  ">
+                                      {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href=""   >
+                                    <img className="rounded-md" src="/airpods/1.png" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 ">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star/>
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="/" >
+                                <img className="rounded-md" src="/aplle/tv.png" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 ">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="samsung.png" alt="Feature showcase" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white ">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="white.jpg" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="">
+                                    <img className="rounded-md" src="key.webp" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 ">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="/mouse.webp" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 ">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md dark:bg-slate-800">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="/monitor.jpg" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 dark:hover:text-primary-300 dark:text-white">
+                                        {}
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                        <li className="relative bg-white border rounded-lg shadow-md cursor-pointer  hover:shadow-rose-400">
+
+                            <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md dark:bg-slate-800">
+                                <Star />
+                            </div>
+
+                            <div className="flex justify-center p-2">
+                                <a href="" >
+                                    <img className="rounded-md" src="/chair.jpg" alt="Product" />
+                                </a>
+                            </div>
+
+                            <div className="px-4 pb-3">
+                                <div>
+                                    <a href="" className="text-xl font-semibold tracking-tight text-gray-900 hover:text-primary-800 ">
+                                       
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    )
+}
+
+{/****
       <div className="grid grid-cols-3 p-4 md:p-10 sm:p-10 md:grid-cols-6 gap-8  h-[100px] sticky"> 
         <Button onClick={() => router.push('/macbook')}
          className=" hover:text-white text-black shadow shadow-slate-300 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3">Macbbok</Button>
@@ -36,125 +322,6 @@ const Page = () => {
         className=" hover:text-white text-black shadow shadow-slate-300 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3">IPad</Button>
         <Button onClick={() => router.push('/other')}
         className=" hover:text-white text-black shadow shadow-slate-300 sm:grid sm:grid-cols-2 md:grid md:grid-cols-3">Other Category</Button>
-      </div>
-      <div className=" py-12 ">
-    <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold  mb-8 text-gray-900">Introducing Our Latest Product</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img className="object-cover w-full h-full" src="/macbook/1.png" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">View Product</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Macbook Pro </h3>
-                <p className="text-gray-500 text-sm mt-2">Macbook Pro 2023 M3 Chip 8GB ram 256GB SSD </p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$1000</span>
-                    <span className="bg-gray-900 text-white  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img src="/phone/1.png" className="object-cover w-full h-full" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">View Product</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Apple 12Pro 256GB</h3>
-                <p className="text-gray-500 text-sm mt-2">Apple 12Pro 256GB Display FullHD 6*9 Batery 4200mhz Camera Selfy 12px</p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$840</span>
-                    <span className="bg-gray-900  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900  py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img className="object-cover w-full h-full" src="/ipad/ipad.png" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">View Product</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Apple Ipad</h3>
-                <p className="text-gray-500 text-sm mt-2">Apple Ipad 64GB Wifi space no-sm </p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$400.99</span>
-                    <span className="bg-gray-900  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900 py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img className="object-cover w-full h-full" src="/airpods/1.png" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">View Product</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Apple AirPods</h3>
-                <p className="text-gray-500 text-sm mt-2">Apple enjoy music and relax</p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$99.99</span>
-                    <span className="bg-gray-900  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900 py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img className="object-cover w-full h-full" src="/iwatch/1.png" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">Apple</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Apple Watch</h3>
-                <p className="text-gray-500 text-sm mt-2">Apple Ipad 64GB Wifi space no-sm </p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$150</span>
-                    <span className="bg-gray-900  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900 py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-            <div className=" rounded-lg shadow-lg p-8">
-                <div className="relative overflow-hidden">
-                    <img className="object-contain w-full h-full" src="/aplle/hero-2.png" alt="Product" />
-                    <div className="absolute inset-0 bg-black opacity-40"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <button className=" text-gray-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300">Apple</button>
-                    </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mt-4">Apple Watch</h3>
-                <p className="text-gray-500 text-sm mt-2">Apple Ipad 64GB Wifi space no-sm </p>
-                <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-900 font-bold text-lg">$150</span>
-                    <span className="bg-gray-900  rounded">
-                      <Plus className="w-14 h-6" />
-                    </span>
-                    <button className="bg-gray-900  py-2 px-4 rounded-full font-bold hover:bg-gray-800">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-    </div>
-  )
-}
+      </div> */}
 
 export default Page
