@@ -21,7 +21,7 @@ const Page = () => {
             <div className="p-3 shadow-lg hover:transition hover:border-violet-800">
                 <div >
                     <ul className="grid grid-cols-1 gap-8 p-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:p-2 xl:p-5">
-                        <li onClick={() => router.push('/macbook')}
+                        <li 
                         className="relative  border rounded-lg shadow-md cursor-pointer hover:shadow-lg hover:shadow-rose-400">
 
                             <div title="total components" className="absolute top-0 right-0 w-6 h-6 font-bold text-center text-gray-800 bg-white rounded-tr-md rounded-bl-md ">
@@ -29,9 +29,9 @@ const Page = () => {
                             </div>
 
                             <div className="flex justify-center p-2">
-                                < >
+                                <div className="" >
                                     <img className="rounded-md object-contain" src="/macbook/1.png" alt="Product" />
-                                </>
+                                </div>
                             </div>
 
                             <div className="px-4 pb-3">
