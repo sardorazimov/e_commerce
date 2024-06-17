@@ -1,200 +1,125 @@
+'use client'
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import MenuNavbar from '@/components/MenuNavbar'
+
+
+import { Separator } from "@/components/ui/separator";
+import { CreditCard, FoldVerticalIcon, MoveDownIcon, Share, ShoppingBag } from "lucide-react";
+
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+import Title from "./Title";
+import Fovorite from "./favorite";
+import Product from "./product";
+import Sel from "./IphoneSel";
+import Color from "./color";
+import Category from "./category";
+
+function changeColor(color: 'black' | 'white'): void {
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  if (color === 'black') {
+    mainImage.src = 'black-cup.png';
+  } else {
+    mainImage.src = 'white-cup.png';
+  }
+
+  const colorOptions = document.querySelectorAll('.color-option');
+  colorOptions.forEach((option: Element) => {
+    option.classList.remove('border-blue-500');
+    option.classList.remove('ring-2');
+  });
+
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  thumbnails.forEach((thumb: Element) => {
+    thumb.classList.remove('border-blue-500');
+    thumb.classList.remove('ring-2');
+  });
+
+  document.querySelector(`.color-option[onclick="changeColor('${color}')"]`)?.classList.add('border-blue-500', 'ring-2');
+  document.querySelector(`.thumbnail[onclick="changeImage('${color}')"]`)?.classList.add('border-blue-500', 'ring-2');
+}
+
+function changeImage(color: 'black' | 'white'): void {
+  changeColor(color);
+}
+
+
 const Page = () => {
   return (
-    <div className='bg-slate-100'>
-      <MenuNavbar />
-      <div className="text-center flex  items-start justify-between p-10">
-        <Button className='' >
-          <Link href={'/macbook'}>Get More Macbook </Link>
-        </Button>
-        <Button className="">
-          <Link href={'/airpods'}>
-            Get More AirPods
-          </Link>
-        </Button>
+    <div className="">
+
+<div className='p-[10px]'>
+      <div className=" py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid  max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+
+            <div className="lg:pr-4">
+              <div className="relative overflow-hidden rounded-3xl  px-6 pb-9 pt-64  sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10 border border-black bg-transparent">
+                <img className="absolute inset-0 h-full w-full object-contain brightness-125 saturate-0" 
+                src="/phone/1.png" alt="" />
+
+                <div className="absolute inset-0  mix-blend-multiply"></div>
+                <div className="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl" aria-hidden="true">
+                  <div className="aspect-[1097/845] w-[68.5625rem]" ></div>
+                </div>
+                <div className="relative isolate">
+                  <svg viewBox="0 0 162 128" fill="none" aria-hidden="true" className="absolute -left-2 -top-4 -z-10 h-32 stroke-white/20">
+
+                    <use href="#0ef284b8-28c2-426e-9442-8655d393522e" x="86" />
+                  </svg>
+                  <div className="mt-6 text-xl font-semibold leading-8 text-white">
+                    <p></p>
+                  </div>
+                  <figcaption className="mt-6 text-sm leading-6 text-gray-300"><strong className="font-semibold text-white"></strong></figcaption>
+                </div>
+              </div>
+              <Separator />
+              <Product />
+            </div>
+            <div>
+              <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
+                <p className="text-3xl font-semibold leading-7 text-yellow-400">Aplle Iphone </p>
+                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Product Details</h1>
+                <div className="max-w-xl">
+                  <Title />
+                  <Fovorite />
+                </div>
+
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-4">
+                <div>
+                  <div className="text-sm font-semibold leading-6 text-gray-600">Other Iphone</div>
+                   <Sel />
+                </div>
+                <div>
+                  <div className="text-sm font-semibold leading-6 text-gray-600">Colors
+                    <Color/>
+                  </div>
+
+                </div>
+                <div>
+                  <div className="text-sm font-semibold leading-6 text-gray-600">Countries</div>
+                  <div className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900">None</div>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold leading-6 text-gray-600">Price</div>
+                  <div className="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900">$1050</div>
+                </div>
+              </div>
+              <div className="mt-10 flex">
+                <Link href="#" className="text-base font-semibold leading-7 text-yellow-500"><Share/></Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-      <section id="Projects"
-        className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
-
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <Link href={'/'}>
-            <img src="/phone/apple15.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <Link href="#">
-            <img src="/phone/apple13.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <Link href="#">
-            <img src="/phone/apple14.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <Link href="#">
-            <img src="/phone/apple14pro.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <Link href="#">
-            <img src="/phone/apple12pro.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-
-
-        <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
-            <img src="/phone/applex.png"
-              alt="Product" className="h-80 w-72 object-contain rounded-t-xl" />
-            <div className="px-4 py-3 w-72">
-              <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
-              <p className="text-lg font-bold text-black truncate block capitalize">Product Name</p>
-              <div className="flex items-center">
-                <p className="text-lg font-semibold text-black cursor-auto my-3">$149</p>
-                <del>
-                  <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
-                </del>
-                <div className="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                  fill="currentColor" className="bi bi-bag-plus" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
-                  <path
-                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg></div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-      </section>
-
-
-
-
-
-      <div className="text-center py-10 px-10">
-        <h2 className="font-bold text-2xl md:text-4xl mb-4">Thanks</h2>
-      </div>
-
-
-      {/******
- * <script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script>
-<script>
-    kofiWidgetOverlay.draw('mohamedghulam', {
-            'type': 'floating-chat',
-            'floating-chat.donateButton.text': 'Support me',
-            'floating-chat.donateButton.background-color': '#323842',
-            'floating-chat.donateButton.text-color': '#fff'
-        });
-</script>
- */}
-
+      <Separator />
+     <Button className='animate-bounce  text-center  text-white bg-green-500  '>Other Iphone Category <MoveDownIcon /> </Button>
+    
+      <Category />
+    </div>
     </div>
   )
 }
