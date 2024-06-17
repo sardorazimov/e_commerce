@@ -1,7 +1,8 @@
 <div align="center">
   <br />
     <a href="https://t.me/azsams" target="_blank">
-      <img src="https://github.com/sardorazimov/e_commerce/blob/master/public/e.png?raw=true" alt="Project Banner">
+      <img src="https://github.com/sardorazimov/e_commerce/blob/master/public/iwatch/3.png?raw=true" alt="Project Banner">
+      <h1>Azimov</h1>
     </a>
   <br />
   
